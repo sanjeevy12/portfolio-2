@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Portfolio</title>
+
+  <!-- Official Font Awesome CDN for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+    }
+
+    /* Navbar styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: relative;
+      z-index: 1000;
+    }
+
+    .logo a {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #f39c12;
+    }
+
+    /* Hamburger menu icon */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        width: 200px;
+        padding: 15px;
+        border-radius: 8px;
+        z-index: 9999;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 10px 0;
+      }
+    }
+
+    /* Hero section styles */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      padding: 50px 20px;
+      min-height: 90vh;
+      animation: fadeInUp 2.5s ease;
+    }
+
+    .hero-text {
+      flex: 1;
+      max-width: 500px;
+      animation: slideInLeft 2.5s ease-in-out;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .hero-image {
+      flex: 1;
+      max-width: 400px;
+      text-align: center;
+      animation: slideInRight 2.5s ease-in-out;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 50%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-60px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(60px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text,
+      .hero-image {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="logo">
+      <a href="index.html">MyPortfolio</a>
+    </div>
+
+    <div
+      class="menu-toggle"
+      id="menu-toggle"
+      aria-label="Toggle navigation menu"
+      role="button"
+      tabindex="0"
+      aria-expanded="false"
+      aria-controls="nav-links"
+    >
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
+      <li><a href="services.html"><i class="fas fa-cogs"></i> Services</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hello, I'm Sanjai K</h1>
+      <p>
+        I’m a B.Tech student in Artificial Intelligence and Data Science. I enjoy building intelligent systems, analyzing data, and solving real-world problems with tech. Scroll around to explore more about my work and skills!
+      </p>
+    </div>
+    <div class="hero-image">
+      <img src="C:\Users\sanja\Downloads\updated_aids_portfolio2\WhatsApp Image 2025-06-03 at 4.00.39 PM.jpeg" alt="Your Photo" />
+    </div>
+  </section>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggleBtn.addEventListener('click', () => {
+      const isActive = navLinks.classList.toggle('active');
+      toggleBtn.setAttribute('aria-expanded', isActive);
+    });
+
+    toggleBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const isActive = navLinks.classList.toggle('active');
+        toggleBtn.setAttribute('aria-expanded', isActive);
+      }
+    });
+  </script>
+</body>
+</html>

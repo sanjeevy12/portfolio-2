@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects</title>
+
+  <!-- Official Font Awesome CDN for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #1e1e2f;
+      color: white;
+      margin: 0;
+      padding: 40px 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+    }
+    .project-grid {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .project-card {
+      background: #2a2a40;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      width: 300px;
+      cursor: pointer;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: fadeInSlow 2.5s ease forwards;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 15px 35px rgba(243, 156, 18, 0.8);
+    }
+    .project-card img {
+      width: 100%;
+      display: block;
+      transition: filter 0.5s ease;
+      border-radius: 15px 15px 0 0;
+    }
+    .project-card:hover img {
+      filter: brightness(1.1) saturate(1.2);
+    }
+    .project-card h2 {
+      margin: 15px 20px 10px 20px;
+      font-size: 1.3rem;
+    }
+    .project-card p {
+      margin: 0 20px 20px 20px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Slow fadeIn animation */
+    @keyframes fadeInSlow {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Navbar styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: relative;
+      z-index: 1000;
+      margin-bottom: 40px;
+      border-radius: 8px;
+    }
+
+    .logo a {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #f39c12;
+    }
+
+    /* Hamburger menu icon */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* Responsive navbar */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        width: 200px;
+        padding: 15px;
+        border-radius: 8px;
+        z-index: 9999;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="logo">
+      <a href="index.html">MyPortfolio</a>
+    </div>
+
+    <div
+      class="menu-toggle"
+      id="menu-toggle"
+      aria-label="Toggle navigation menu"
+      role="button"
+      tabindex="0"
+      aria-expanded="false"
+      aria-controls="nav-links"
+    >
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
+      <li><a href="services.html"><i class="fas fa-cogs"></i> Services</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
+
+  <h1>My Projects</h1>
+  <div class="project-grid">
+    <a href="project-churn.html" class="project-card" title="Customer Churn Prediction">
+      <img src="churn.jpg" alt="Customer Churn" />
+      <h2>Customer Churn Prediction</h2>
+      <p>Tech Stack: Python, Pandas, Scikit-learn</p>
+      <p>Result: 85% Accuracy</p>
+    </a>
+    <a href="project-chatbot.html" class="project-card" title="AI Chatbot">
+      <img src="chatbot.jpg" alt="Chatbot" />
+      <h2>AI Chatbot</h2>
+      <p>Tech Stack: Python, NLP, Flask</p>
+      <p>Result: Interactive Q&A Chatbot</p>
+    </a>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggleBtn.addEventListener('click', () => {
+      const isActive = navLinks.classList.toggle('active');
+      toggleBtn.setAttribute('aria-expanded', isActive);
+    });
+
+    toggleBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const isActive = navLinks.classList.toggle('active');
+        toggleBtn.setAttribute('aria-expanded', isActive);
+      }
+    });
+  </script>
+</body>
+</html>

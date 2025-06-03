@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Customer Churn Prediction - Project Details</title>
+
+  <!-- Official Font Awesome CSS CDN for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    body {
+      background: #1e1e2f;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      animation: fadeInSlow 2s ease forwards;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #2a2a40;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    img.project-image {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+    section {
+      margin-top: 30px;
+      line-height: 1.6;
+    }
+    h2 {
+      border-bottom: 2px solid #f39c12;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      font-weight: 600;
+      color: #f39c12;
+    }
+    a.back-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #f39c12;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    a.back-btn:hover {
+      color: #fff;
+    }
+
+    @keyframes fadeInSlow {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Navbar styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: relative;
+      z-index: 1000;
+      margin-bottom: 40px;
+      border-radius: 8px;
+    }
+
+    .logo a {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #f39c12;
+    }
+
+    /* Hamburger menu icon */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* Responsive navbar */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        width: 200px;
+        padding: 15px;
+        border-radius: 8px;
+        z-index: 9999;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="logo">
+      <a href="index.html">MyPortfolio</a>
+    </div>
+
+    <div
+      class="menu-toggle"
+      id="menu-toggle"
+      aria-label="Toggle navigation menu"
+      role="button"
+      tabindex="0"
+      aria-expanded="false"
+      aria-controls="nav-links"
+    >
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
+      <li><a href="services.html"><i class="fas fa-cogs"></i> Services</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <a href="projects.html" class="back-btn">&larr; Back to Projects</a>
+    <h1>Customer Churn Prediction</h1>
+    <img src="churn.jpg" alt="Customer Churn Project Image" class="project-image" />
+
+    <section>
+      <h2>Overview</h2>
+      <p>This project aims to predict customer churn for a telecom company using machine learning algorithms. The model helps to identify customers likely to stop service, enabling proactive retention strategies.</p>
+    </section>
+
+    <section>
+      <h2>Explanation (Making)</h2>
+      <p>The data was cleaned and processed using Pandas. Exploratory Data Analysis (EDA) identified key churn drivers. Various classifiers such as Logistic Regression and Random Forest were evaluated. Hyperparameter tuning improved the model's performance.</p>
+    </section>
+
+    <section>
+      <h2>Image</h2>
+      <p>The image above shows the confusion matrix of the best-performing model, demonstrating accuracy and balance between false positives and negatives.</p>
+    </section>
+
+    <section>
+      <h2>Conclusion</h2>
+      <p>The model achieved 85% accuracy in predicting churn. This predictive tool provides valuable insights to help the company retain customers and optimize marketing strategies.</p>
+    </section>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggleBtn.addEventListener('click', () => {
+      const isActive = navLinks.classList.toggle('active');
+      toggleBtn.setAttribute('aria-expanded', isActive);
+    });
+
+    toggleBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const isActive = navLinks.classList.toggle('active');
+        toggleBtn.setAttribute('aria-expanded', isActive);
+      }
+    });
+  </script>
+</body>
+</html>

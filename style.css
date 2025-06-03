@@ -1,0 +1,100 @@
+
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  transition: background 0.5s ease;
+}
+.navbar {
+  background: #111;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.nav-links li a:hover {
+  color: #f39c12;
+}
+.home {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
+  text-align: center;
+  padding-top: 100px;
+}
+.about {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: white;
+  text-align: center;
+}
+.projects {
+  background: linear-gradient(to right, #f7971e, #ffd200);
+  color: black;
+}
+.services {
+  background: linear-gradient(to right, #00c9ff, #92fe9d);
+  color: black;
+}
+.contact {
+  background: linear-gradient(to right, #fc466b, #3f5efb);
+  color: white;
+  text-align: center;
+}
+.container {
+  padding: 50px 20px;
+}
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+.slide-up {
+  animation: slideUp 1s ease-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.profile-photo {
+  width: 150px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  margin-bottom: 1rem;
+}
+.project-grid, .service-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.project-card, .service-card {
+  background: white;
+  color: black;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
+  transition: transform 0.3s;
+}
+.project-card:hover, .service-card:hover {
+  transform: scale(1.05);
+}
+.social-icons a {
+  color: white;
+  font-size: 2rem;
+  margin: 0 15px;
+  transition: transform 0.3s, color 0.3s;
+}
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: yellow;
+}
